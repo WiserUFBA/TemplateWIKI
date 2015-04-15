@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Page Configs -->
+    <title>Smart-UFBA: Web das Coisas para um campus universitário inteligente</title>
+    <meta name="charset" content="utf-8" />
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Page Languages -->
+    <meta name="language" content="English" />
+    <meta name="language" content="Portuguese" />
+
+    <!-- Copyright informations -->
+    <link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/">
+
+    <!-- Favicon configuration -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-96x96.png" sizes="96x96">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Some description of this site -->
+    <meta name="description" content="Wiki do projeto de pesquisa SmartUFBA que propõe o uso da Web das Coisas para um campus universitário inteligente">
+    <meta property="og:type" content="article"/>
+    <meta property="fb:admins" content="612066588876234"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/smartufbalogo.png">
+    <meta property="og:image" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/smartufbalogo.png"/>
+
+    <!-- IMPORTANT THING THAT NEED TO BE FIXED! -->
+    <meta property="og:description" content="..."/>
+    <meta name="twitter:title" content="...">
+    <meta name="twitter:description" content="...">
+
+    <!-- Style Configuration |!!CHANGE HREF BEFORE UPDATE!!| -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <!-- Top -->
+    <div id="top-transparency"></div>
+    <div id="top-base"></div>
+    <!-- Content Area -->
+    <div class="content">
+        <a id="top"></a>
+        <!-- Used in some cases -->
+        <div id="content-notice">
+            <div id="content-central-notice"></div>
+        </div>
+        <div class="content-indicators"></div>
+        <h1 id="content-firstheading"> %BASETOPIC% </h1>
+        <div id="content-body">
+            <div id="content-space"></div>
+            <!-- Article will be placed here -->
+            <article id="content-text">
+                %TEXT%
+            </article>
+            <div class="printfooter">
+                Retrieved from "<a href="https://wiki.dcc.ufba.br/SmartUFBA" dir="ltr"> https://wiki.dcc.ufba.br/SmartUFBA </a>"
+            </div>
+            <!-- Get the names of this topic -->
+            <div id="content-links" class="content-links"> ... </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <!-- Menu -->
+    <div id="base-navigation">
+        <h2> Navigation menu </h2>
+        <div id="navigation-head">
+            <div id="translate-buttons" role="navigation">
+                <ul>
+                    <div class="translate-icon" alt="Translate Menu"></div>
+                    <li><a href="#" class="flag-en"> English </a></li>
+                    <li><a href="#" class="flag-pt"> Portuguese </a></li>
+                </ul>
+            </div>
+            <div id="head-left">
+                <div class="head-tabs">
+                    <!-- Need a javascript or some css trick -->
+                    <ul>
+                        <li id="button-topic" class="selected" onclick="changeSelectStatusTopic()">
+                            <span>
+                                <a accesskey="a" title="Ver o conteudo deste tópico [Alt+Shift+a]" href="#1">Tópico</a>
+                            </span>
+                        </li>
+                        <li id="button-discuss" onclick="changeSelectStatusDiscuss()">
+                            <span>
+                                <a accesskey="d" title="Discursões deste tópico [Alt+Shift+d]" href="#2">Discursões</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="head-right">
+                <div class="head-tabs">
+                    <!-- Need a javascript or some css trick -->
+                    <ul>
+                        <li id="button-raw" onclick="changeSelectStatusViewRaw()">
+                            <span>
+                                <a accesskey="r" title="Ver o código fonte deste tópico [Alt+Shift+r]" href="#3">Código-Fonte</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="head-search" role="search">
+                    <form id="search-form" action="#">
+                        <div id="simple-search">
+                            <input id="searchInput" type="search" accesskey="p" title="Procure na wiki [Alt+Shift+p]" placeholder="Search" name="search" tabindex="1" autocomplete="off"></input>
+                            <input id="searchButton" class="searchButton" type="submit" title="Procure por um tópico com este nome" value="Go" name="go"></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="navigation-panel">
+            <div id="panel-logo" role="banner">
+                <a class="banner" title="Visite a página principal" href="https://wiki.dcc.ufba.br/SmartUFBA/"></a>
+            </div>
+            <!-- Every group of menu on this secction need to use the class "portal" and the role "navigation" -->
+            <!-- <div id="..." class="portal" role="navigation"> -->
+            <div id="main-portal" name="main" class="portal" role="navigation">
+                <div class="body">
+                    <ul>
+                        <li><a href="#" title="Visit the main page [Alt+Shift+z]">Main page</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>       
+            </div>
+            <div id="area2-portal" class="portal" role="navigation">
+                <h3>
+                    Section 2
+                </h3>
+                <div class="body">
+                    <ul>
+                        <li><a href="#">Link 5</a></li>
+                        <li><a href="#">Link 6</a></li>
+                        <li><a href="#">Link 7</a></li>
+                        <li><a href="#">Link 8</a></li>
+                    </ul>
+                </div>       
+            </div>
+            <div id="area3-portal" class="portal" role="navigation">
+                <h3>
+                    Section 3
+                </h3>
+                <div class="body">
+                    <ul>
+                        <li><a href="#">Link 9</a></li>
+                        <li><a href="#">Link 10</a></li>
+                        <li><a href="#">Link 11</a></li>
+                        <li><a href="#">Final Link</a></li>
+                    </ul>
+                </div>       
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <ul id="footer-info">
+            <li id="footer-whatis">
+                O projeto de pesquisa SmartUFBA é um projeto que tem como foco proporcionar um campus universitário mais inteligente, através da Web das Coisas(WoT). Para isso iremos desenvolver uma infraestrutura web capaz de automatizar a publicação, descoberta, composição, utilização e compartilhamento de dispositivos através da Internet das Coisas(IoT).
+            </li>
+        </ul>
+        <ul id="footer-config">
+            <li> <a href="%SCRIPTURL{edit}%/%WEB%/%TOPIC%?t=%GMTIME{$epoch}%" accesskey="E"><strong>E</strong>ditar</a> </li>
+            <li> <a href="%SCRIPTURL{attach}%/%WEB%/%TOPIC%?t=%GMTIME{$epoch}%" accesskey="A"><strong>A</strong>nexar</a> </li>
+            <li> [[%SCRIPTURL{rdiff}%/%WEB%/%TOPIC%?t=%GMTIME{$epoch}%][Versões]] </li>
+            <li> [[%SCRIPTURL{oops}%/%WEB%/%TOPIC%?t=%GMTIME{$epoch}%&template=more][Mais...]] </li>
+            <li> [[WebChanges][Modificações]] </li>
+            <li> [[WebSearch][Busca Detalhada]] </li>
+            <li> [[%STATISTICSTOPIC%][Estatistica]] </li>
+            <li> [[%NOTIFYTOPIC%][Aviso de Atualização]] </li>
+            <li> [[WebPreferences][Preferências]] </li>
+        </ul>
+        <ul id="footer-icons">
+            <li id="wiser-ufba">
+                <a href="http://wiser.dcc.ufba.br">
+                    <img height="50" alt="Wiser Research Group" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/wiserufbalogo.jpg"></img>
+                </a>
+            </li>
+            <li id="smart-ufba">
+                <a href="https://github.com/WiserUFBA/SmartUFBA">
+                    <img height="55" alt="SmartUFBA Project" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-96x96.png"></img>
+                </a>
+            </li>
+            <li id="smart-wiki-template">
+                <a href="https://github.com/WiserUFBA/TemplateWIKI/">
+                    <img height="52" alt="SmartUFBA Project Wiki Template" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/gr200.png"></img>
+                </a>
+            </li>
+        </ul>
+        <div style="clear:both"></div>
+    </footer>
+    <!-- Change selected element -->
+    <script type="text/javascript">
+        function changeSelectStatusTopic(){
+            document.getElementById("button-topic").className = "selected";
+            document.getElementById("button-discuss").className = "";
+            document.getElementById("button-raw").className = "";
+        }
+        function changeSelectStatusDiscuss(){
+            document.getElementById("button-topic").className = "";
+            document.getElementById("button-discuss").className = "selected";
+            document.getElementById("button-raw").className = "";
+        }
+        function changeSelectStatusViewRaw(){
+            document.getElementById("button-topic").className = "";
+            document.getElementById("button-discuss").className = "";
+            document.getElementById("button-raw").className = "selected";
+        }
+    </script>
+</body>
+</html>
