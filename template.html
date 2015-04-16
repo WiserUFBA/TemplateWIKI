@@ -3,7 +3,7 @@
 <head>
     <!-- Page Configs -->
     <title>Smart-UFBA: Web das Coisas para um campus universitário inteligente</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta charset="utf-8"></meta>
 
     <!-- Page Languages -->
     <meta name="language" content="English" />
@@ -37,6 +37,7 @@
 
     <!-- Style Configuration |!!CHANGE HREF BEFORE UPDATE!!| -->
     <link rel="stylesheet" type="text/css" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/style.css">
+    <!-- https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/style.css -->   
 </head>
 <body>
     <!-- Top -->
@@ -195,21 +196,73 @@
     </footer>
     <!-- Change selected element -->
     <script type="text/javascript">
+        var raw_text = "";
+        var text_tag = document.getElementById("content-text").innerHTML;
+        var topic_tag = document.getElementById("content-firstheading").innerHTML;
+        var topic_url = document.getElementsByClassName("foswikiCurrentTopicLink")[0].href;
+        //topic_url = "https://wiki.dcc.ufba.br/SmartUFBA/ProjectLogo"; DEBUG
+
+        // Change title and context topic
+        function changeTitleTopic(title, topic){
+            document.getElementById("content-firstheading").innerHTML = title;
+            document.getElementById("content-text").innerHTML = topic;
+        }
+
+        // Change the Selected status
+        function changeSelectedButton(button_n){
+            document.getElementById("button-topic").className = button_n == 1? "selected":"";
+            document.getElementById("button-discuss").className = button_n == 2? "selected":"";;
+            document.getElementById("button-raw").className = button_n == 3? "selected":"";;
+        }
+
+        // Hidden contents-link
+        function hideContLinks(state){
+            if(state)
+                document.getElementById("content-links").className = "content-links hidden-class";
+            else
+                 document.getElementById("content-links").className = "content-links";
+        }
+
+        // Button Topic
         function changeSelectStatusTopic(){
-            document.getElementById("button-topic").className = "selected";
-            document.getElementById("button-discuss").className = "";
-            document.getElementById("button-raw").className = "";
+            changeSelectedButton(1);
+            changeTitleTopic(topic_tag, text_tag);
+            hideContLinks(false);
         }
+        // Button Discuss
         function changeSelectStatusDiscuss(){
-            document.getElementById("button-topic").className = "";
-            document.getElementById("button-discuss").className = "selected";
-            document.getElementById("button-raw").className = "";
+            changeSelectedButton(2);
+            changeTitleTopic("Discursões", "");
+            hideContLinks(true);
         }
+        // Button Raw 
         function changeSelectStatusViewRaw(){
-            document.getElementById("button-topic").className = "";
-            document.getElementById("button-discuss").className = "";
-            document.getElementById("button-raw").className = "selected";
+            changeSelectedButton(3);
+            changeTitleTopic("Código da página",'<center><img src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/preloading.gif"></img></center>');
+            hideContLinks(true);
+            getRaw(topic_url, changeTitleTopic);
         }
+
+        // Get the raw of the selected topic and put on the document
+        function getRaw(url, response){
+            var xobj = new XMLHttpRequest();
+            url += "?raw=on";
+
+            // url = "teste.html"; // Just for test purposes
+            xobj.open('GET', url, true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    var html_received = new DOMParser();
+                    html_received = html_received.parseFromString(xobj.responseText, "text/html");
+                    
+                    var html_saida = '<div class="raw-text">' + html_received.getElementById("topic").innerHTML + '</div>';
+                    html_saida = html_saida.replace(new RegExp('\r?\n','g'), '<br />', "<br />");
+                    response('Código da página', html_saida);
+                }
+            };
+            xobj.send(null); 
+        }
+
     </script>
 </body>
 </html>

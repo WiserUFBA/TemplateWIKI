@@ -115,6 +115,19 @@ html {
     width: auto;
 }
 
+.raw-text{
+    word-wrap: normal;
+    padding: 16px;
+    overflow: auto;
+    line-height: 1.45;
+    background-color: #F7F7F7;
+    border-radius: 3px;
+    font: 12px Consolas,"Liberation Mono",Menlo,Courier,monospace;
+    box-sizing: border-box;
+    color: #333;
+    border: 1px solid #DDD;
+}
+
 /* NAVIGATION */
 #base-navigation h2 {
     position: absolute;
@@ -394,7 +407,7 @@ html {
     margin-top: 0px;
 }
 
-.portal[name="main"]{
+.portal[name="main"] .body{
     margin-left: 0.5em;
 }
 
@@ -541,4 +554,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0.5em;
     padding-bottom: 0.17em;
     border-bottom: 1px solid #AAA;
+}
+
+.hidden-class{
+    display: none !important;
 }
