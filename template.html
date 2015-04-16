@@ -203,16 +203,24 @@
         var topic_tag = document.getElementById("content-firstheading").innerHTML;
         var topic_url = document.getElementsByClassName("foswikiCurrentTopicLink")[0].href;
         var external_links = document.getElementsByClassName("external-link");
+        var links_list = "";
         
-        if(external_links.length){
-            var links_list = "<ul>"
+        if(external_links.length > 0){
+            links_list = "<ul>"
             for (var i = 0; i < external_links.length; i++)  {
-                external_links[i] += '<li><div class="link-external"><h5 class="link-name"><a href="'+ external_links[i].href +'">'+ external_links.innerHTML +'</a></h5><p class="link-description">'+ external_links[i].title +"</p></div></li>";
+                links_list += '<li><div class="link-external"><h4 class="link-name"><a href="'+ external_links[i].href +'">'+ external_links[i].innerHTML +'</a></h4><p class="link-description">'+ external_links[i].title +"</p></div></li>";
             };
             links_list += "</ul>";
-            document.getElementById("content-links").innerHTML = "<h4> Referências </h4>"+ links_list;
+            document.getElementById("content-links").innerHTML = "<h3> Referências </h4>"+ links_list;
+            hideContLinks(false);
         }
         else hideContLinks(true);
+
+        function showReferences(){
+            var cont_links = document.getElementById("content-links");
+            cont_links.innerHTML = "<h3> Referências </h4>"+ links_list;
+            cont_links.className = external_links.length > 0 ? "content-links hidden-class" : "content-links";
+        }
 
         // Change title and context topic
         function changeTitleTopic(title, topic){
@@ -230,17 +238,15 @@
 
         // Hidden contents-link
         function hideContLinks(state){
-            if(state)
-                document.getElementById("content-links").className = "content-links hidden-class";
-            else
-                 document.getElementById("content-links").className = "content-links";
+            if(state) document.getElementById("content-links").className = "content-links hidden-class";
+            else document.getElementById("content-links").className = "content-links";
         }
 
         // Button Topic
         function changeSelectStatusTopic(){
             changeSelectedButton(1);
             changeTitleTopic(topic_tag, text_tag);
-            hideContLinks(false);
+            showReferences();
         }
         // Button Discuss
         function changeSelectStatusDiscuss(){
