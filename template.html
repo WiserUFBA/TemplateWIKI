@@ -64,6 +64,7 @@
             <article id="content-text">
                 %TEXT%
             </article>
+            <div class="hidden-class" id="comment-content"> %COMMENT% </div>
             <div class="printfooter">
                 Retrieved from "<a href="https://wiki.dcc.ufba.br/SmartUFBA" dir="ltr"> https://wiki.dcc.ufba.br/SmartUFBA </a>"
             </div>
@@ -259,7 +260,7 @@
         // Button Discuss
         function changeSelectStatusDiscuss(){
             changeSelectedButton(2);
-            changeTitleTopic("Discursões", "");
+            changeTitleTopic("Discursões", document.getElementById("comment-content").innerHTML);
             hideContLinks(true);
         }
         // Button Raw 
