@@ -62,7 +62,9 @@
                 Retrieved from "<a href="https://wiki.dcc.ufba.br/SmartUFBA" dir="ltr"> https://wiki.dcc.ufba.br/SmartUFBA </a>"
             </div>
             <!-- Get the names of this topic -->
-            <div id="content-links" class="content-links"> ... </div>
+            <div id="content-links" class="content-links">
+                <h4> Referências </h4>
+            </div>
             <div style="clear:both"></div>
         </div>
     </div>
@@ -194,13 +196,23 @@
         </ul>
         <div style="clear:both"></div>
     </footer>
-    <!-- Change selected element -->
+    <!-- Page Script -->
     <script type="text/javascript">
-        var raw_text = "";
+        var raw_text = "", actual_section = 1;
         var text_tag = document.getElementById("content-text").innerHTML;
         var topic_tag = document.getElementById("content-firstheading").innerHTML;
         var topic_url = document.getElementsByClassName("foswikiCurrentTopicLink")[0].href;
-        //topic_url = "https://wiki.dcc.ufba.br/SmartUFBA/ProjectLogo"; DEBUG
+        var external_links = document.getElementsByClassName("external-link");
+        
+        if(external_links.length){
+            var links_list = "<ul>"
+            for (var i = 0; i < external_links.length; i++)  {
+                external_links[i] += '<li><div class="link-external"><h5 class="link-name"><a href="'+ external_links[i].href +'">'+ external_links.innerHTML +'</a></h5><p class="link-description">'+ external_links[i].title +"</p></div></li>";
+            };
+            links_list += "</ul>";
+            document.getElementById("content-links").innerHTML = "<h4> Referências </h4>"+ links_list;
+        }
+        else hideContLinks(true);
 
         // Change title and context topic
         function changeTitleTopic(title, topic){
@@ -213,6 +225,7 @@
             document.getElementById("button-topic").className = button_n == 1? "selected":"";
             document.getElementById("button-discuss").className = button_n == 2? "selected":"";;
             document.getElementById("button-raw").className = button_n == 3? "selected":"";;
+            actual_section = button_n;
         }
 
         // Hidden contents-link
@@ -257,12 +270,12 @@
                     
                     var html_saida = '<div class="raw-text">' + html_received.getElementById("topic").innerHTML + '</div>';
                     html_saida = html_saida.replace(new RegExp('\r?\n','g'), '<br />', "<br />");
-                    response('Código da página', html_saida);
+                    if(actual_section == 3)
+                        response('Código da página', html_saida);
                 }
             };
             xobj.send(null); 
         }
-
     </script>
 </body>
 </html>
