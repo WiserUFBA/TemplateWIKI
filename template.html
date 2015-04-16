@@ -114,9 +114,11 @@
                     </ul>
                 </div>
                 <div id="head-search" role="search">
-                    <form id="search-form" action="#">
+                    <form id="search-form" name="WebSearchForm" action="/SmartUFBA/WebSearch">
                         <div id="simple-search">
-                            <input id="searchInput" type="search" accesskey="p" title="Procure na wiki [Alt+Shift+p]" placeholder="Search" name="search" tabindex="1" autocomplete="off"></input>
+                            <input id="searchInput" type="text" accesskey="p" title="Procure na wiki [Alt+Shift+p]" placeholder="Search" name="search" tabindex="1" autocomplete="off"></input>
+                            <input class="hidden-class" value="all" name="scope">
+                            <input class="hidden-class" value="search" name="tab">
                             <input id="searchButton" class="searchButton" type="submit" title="Procure por um tópico com este nome" value="Go" name="go"></input>
                         </div>
                     </form>
