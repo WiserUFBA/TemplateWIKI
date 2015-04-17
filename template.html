@@ -61,10 +61,9 @@
         <div id="content-body">
             <div id="content-space"></div>
             <!-- Article will be placed here -->
-            <article id="content-text">
-                %TEXT%
-            </article>
-            <div class="hidden-class" id="comment-content"> %COMMENT% </div>
+            <article id="content-text"> %TEXT% </article>
+            <div id="content-comment" class="hidden-class"> %COMMENT% </div>
+            <div id="content-raw" class="hidden-class"> </div>
             <div class="printfooter">
                 Retrieved from "<a href="https://wiki.dcc.ufba.br/SmartUFBA" dir="ltr"> https://wiki.dcc.ufba.br/SmartUFBA </a>"
             </div>
@@ -208,8 +207,6 @@
     <!-- Page Script -->
     <script type="text/javascript">
         var raw_text = "", actual_section = 1;
-        var text_tag = document.getElementById("content-text").innerHTML;
-        var topic_tag = document.getElementById("content-firstheading").innerHTML;
         var topic_url = document.getElementsByClassName("foswikiCurrentTopicLink")[0].href;
         var external_links = document.getElementsByClassName("external-link");
         var links_list = "";
@@ -224,6 +221,11 @@
             hideContLinks(false);
         }
         else hideContLinks(true);
+
+        function hideTag(id, state){
+            if(state) document.getElementById(id).className += " hidden-class";
+            else document.getElementById(id).className.replace(" hidden-class", "");
+        }
 
         function showReferences(){
             var cont_links = document.getElementById("content-links");
@@ -260,7 +262,7 @@
         // Button Discuss
         function changeSelectStatusDiscuss(){
             changeSelectedButton(2);
-            changeTitleTopic("Discursões", document.getElementById("comment-content").innerHTML);
+            changeTitleTopic("Discursões", document.getElementById("content-comment").innerHTML);
             hideContLinks(true);
         }
         // Button Raw 
