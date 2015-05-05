@@ -3,45 +3,49 @@
 <head>
     <!-- Page Configs -->
     <title>Smart-UFBA: Web das Coisas para um campus universitário inteligente</title>
-    <meta charset="utf-8"></meta>
+    <meta charset="utf-8" />
 
     <!-- Page Languages -->
     <meta name="language" content="English" />
     <meta name="language" content="Portuguese" />
 
     <!-- Copyright informations -->
-    <link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/">
+    <link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
 
     <!-- Favicon configuration -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-96x96.png" sizes="96x96">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-96x96.png" sizes="96x96" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-TileImage" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/mstile-144x144. 
+    png" />
+    <meta name="theme-color" content="#ffffff" />
     
     <!-- Some description of this site -->
-    <meta name="description" content="Wiki do projeto de pesquisa SmartUFBA que propõe o uso da Web das Coisas para um campus universitário inteligente">
-    <meta property="og:type" content="article"/>
-    <meta property="fb:admins" content="612066588876234"/>
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/smartufbalogo.png">
-    <meta property="og:image" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/smartufbalogo.png"/>
+    <meta name="description" content="Wiki do projeto de pesquisa SmartUFBA que propõe o uso da Web das Coisas para um campus universitário inteligente" />
+    <meta property="fb:admins" content="612066588876234" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/smartufbalogo.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/smartufbalogo.png" />
 
     <!-- IMPORTANT THING THAT NEED TO BE FIXED! -->
     <meta property="og:description" content="..."/>
-    <meta name="twitter:title" content="...">
-    <meta name="twitter:description" content="...">
+    <meta name="twitter:title" content="..." />
+    <meta name="twitter:description" content="..." />
 
     <!-- Style Configuration |!!CHANGE HREF BEFORE UPDATE!!| -->
-    <link rel="stylesheet" type="text/css" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <!-- https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/style.css -->
     <style type="text/css">
         /* Foswiki classes */
         .foswikiHidden{
             display: none;
+        }
+        .content-firstheading a{
+            color: black;
         }
     </style>
 </head>
@@ -57,13 +61,17 @@
             <div id="content-central-notice"></div>
         </div>
         <div class="content-indicators"></div>
-        <h1 id="content-firstheading"> %BASETOPIC% </h1>
+        <h1 id="content-firstheading"> %BASETOPIC%a </h1>
         <div id="content-body">
             <div id="content-space"></div>
             <!-- Article will be placed here -->
             <article id="content-text"> %TEXT% </article>
             <div id="content-comment" class="hidden-class"> %COMMENT% </div>
-            <div id="content-raw" class="hidden-class"> </div>
+            <div id="content-raw" class="hidden-class">
+                <center>
+                    <img src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/preloading.gif" />
+                </center>
+            </div>
             <div class="printfooter">
                 Retrieved from "<a href="https://wiki.dcc.ufba.br/SmartUFBA" dir="ltr"> https://wiki.dcc.ufba.br/SmartUFBA </a>"
             </div>
@@ -87,14 +95,13 @@
             </div>
             <div id="head-left">
                 <div class="head-tabs">
-                    <!-- Need a javascript or some css trick -->
                     <ul>
-                        <li id="button-topic" class="selected" onclick="changeSelectStatusTopic()">
+                        <li id="button-topic" class="selected">
                             <span>
                                 <a accesskey="a" title="Ver o conteudo deste tópico [Alt+Shift+a]" href="#1">Tópico</a>
                             </span>
                         </li>
-                        <li id="button-discuss" onclick="changeSelectStatusDiscuss()">
+                        <li id="button-discuss">
                             <span>
                                 <a accesskey="d" title="Discursões deste tópico [Alt+Shift+d]" href="#2">Discursões</a>
                             </span>
@@ -106,9 +113,9 @@
                 <div class="head-tabs">
                     <!-- Need a javascript or some css trick -->
                     <ul>
-                        <li id="button-raw" onclick="changeSelectStatusViewRaw()">
+                        <li id="button-raw">
                             <span>
-                                <a accesskey="r" title="Ver o código fonte deste tópico [Alt+Shift+r]" href="#3">Código-Fonte</a>
+                                <a accesskey="r" title="Ver o código fonte deste tópico [Alt+Shift+r]" href="#3"> Código-Fonte </a>
                             </span>
                         </li>
                     </ul>
@@ -116,10 +123,10 @@
                 <div id="head-search" role="search">
                     <form id="search-form" name="WebSearchForm" action="/SmartUFBA/WebSearch">
                         <div id="simple-search">
-                            <input id="searchInput" type="text" accesskey="p" title="Procure na wiki [Alt+Shift+p]" placeholder="Search" name="search" tabindex="1" autocomplete="off"></input>
-                            <input class="hidden-class" value="all" name="scope">
-                            <input class="hidden-class" value="search" name="tab">
-                            <input id="searchButton" class="searchButton" type="submit" title="Procure por um tópico com este nome" value="Go" name="go"></input>
+                            <input id="searchInput" type="text" accesskey="p" title="Procure na wiki [Alt+Shift+p]" placeholder="Search" name="search" tabindex="1" autocomplete="off" />
+                            <input class="hidden-class" value="all" name="scope" />
+                            <input class="hidden-class" value="search" name="tab" />
+                            <input id="searchButton" class="searchButton" type="submit" title="Procure por um tópico com este nome" value="Go" name="go" />
                         </div>
                     </form>
                 </div>
@@ -131,40 +138,56 @@
             </div>
             <!-- Every group of menu on this secction need to use the class "portal" and the role "navigation" -->
             <!-- <div id="..." class="portal" role="navigation"> -->
-            <div id="main-portal" name="main" class="portal" role="navigation">
+            <div id="main-portal" class="portal" role="navigation">
                 <div class="body">
                     <ul>
-                        <li><a href="#" title="Visit the main page [Alt+Shift+z]">Main page</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#" title="Visite a página principal [Alt+Shift+z]">Página Principal</a></li>
+                        <li><a href="#"> Sobre o projeto </a></li>
+                        <li><a href="#"> Publicações </a></li>
+                        <li><a href="#"> Apresentações </a></li>
+                        <li><a href="#"> Grupo </a></li>
                     </ul>
                 </div>       
             </div>
             <div id="area2-portal" class="portal" role="navigation">
-                <h3>
-                    Section 2
-                </h3>
+            <h3> Nossos grupos </h3>
+            </div>
+            <div id="area2-portal" class="portal" role="navigation">
+                <h3> Hardware </h3>
                 <div class="body">
                     <ul>
-                        <li><a href="#">Link 5</a></li>
-                        <li><a href="#">Link 6</a></li>
-                        <li><a href="#">Link 7</a></li>
-                        <li><a href="#">Link 8</a></li>
+                        <li><a href="#"> Tutoriais </a></li>
+                        <li><a href="#"> Artigos </a></li>
+                        <li><a href="#"> Projetos </a></li>
+                        <li><a href="#"> Especificações </a></li>
+                        <li><a href="#"> Todos os Tópicos </a></li>
+                        <li><a href="#"> Diário de Bordo </a></li>
                     </ul>
                 </div>       
             </div>
             <div id="area3-portal" class="portal" role="navigation">
-                <h3>
-                    Section 3
-                </h3>
+                <h3> Software </h3>
                 <div class="body">
                     <ul>
-                        <li><a href="#">Link 9</a></li>
-                        <li><a href="#">Link 10</a></li>
-                        <li><a href="#">Link 11</a></li>
-                        <li><a href="#">Final Link</a></li>
+                        <li><a href="#"> Tutoriais </a></li>
+                        <li><a href="#"> Artigos </a></li>
+                        <li><a href="#"> Projetos </a></li>
+                        <li><a href="#"> Especificações </a></li>
+                        <li><a href="#"> Todos os Tópicos </a></li>
+                        <li><a href="#"> Diário de Bordo </a></li>
+                    </ul>
+                </div>       
+            </div>
+            <div id="area4-portal" class="portal" role="navigation">
+                <h3> Barramento </h3>
+                <div class="body">
+                    <ul>
+                        <li><a href="#"> Tutoriais </a></li>
+                        <li><a href="#"> Artigos </a></li>
+                        <li><a href="#"> Projetos </a></li>
+                        <li><a href="#"> Especificações </a></li>
+                        <li><a href="#"> Todos os Tópicos </a></li>
+                        <li><a href="#"> Diário de Bordo </a></li>
                     </ul>
                 </div>       
             </div>
@@ -188,17 +211,17 @@
         <ul id="footer-icons">
             <li id="wiser-ufba">
                 <a href="http://wiser.dcc.ufba.br">
-                    <img height="50" alt="Wiser Research Group" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/wiserufbalogo.jpg"></img>
+                    <img height="50" alt="Wiser Research Group" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/wiserufbalogo.jpg" />
                 </a>
             </li>
             <li id="smart-ufba">
                 <a href="https://github.com/WiserUFBA/SmartUFBA">
-                    <img height="55" alt="SmartUFBA Project" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-96x96.png"></img>
+                    <img height="55" alt="SmartUFBA Project" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-96x96.png" />
                 </a>
             </li>
             <li id="smart-wiki-template">
                 <a href="https://github.com/WiserUFBA/TemplateWIKI/">
-                    <img height="52" alt="SmartUFBA Project Wiki Template" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/gr200.png"></img>
+                    <img height="52" alt="SmartUFBA Project Wiki Template" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/gr200.png" />
                 </a>
             </li>
         </ul>
@@ -206,93 +229,130 @@
     </footer>
     <!-- Page Script -->
     <script type="text/javascript">
-        var raw_text = "", actual_section = 1;
-        var topic_url = document.getElementsByClassName("foswikiCurrentTopicLink")[0].href;
+        "use strict";
+        /* Created by Jeferson Lima */
+        /* Version 1.0 */
+        /* First Part */
+        var isReceivedRaw = false, actual_section = 1;
+        var topic_url = "", topic_tag = "Veb";
+        if (document.getElementsByClassName("foswikiCurrentTopicLink").length > 0) {
+            topic_url = document.getElementsByClassName("foswikiCurrentTopicLink")[0].href;
+            topic_tag = topic_url.split("/")[topic_url.split("/").length - 1];
+        }
         var external_links = document.getElementsByClassName("external-link");
         var links_list = "";
-        
-        if(external_links.length > 0){
-            links_list = "<ul>"
-            for (var i = 0; i < external_links.length; i++)  {
-                links_list += '<li><div class="link-external"><h4 class="link-name"><a href="'+ external_links[i].href +'">'+ external_links[i].innerHTML +'</a></h4><p class="link-description">'+ external_links[i].title +"</p></div></li>";
-            };
-            links_list += "</ul>";
-            document.getElementById("content-links").innerHTML = "<h3> Referências </h4>"+ links_list;
-            hideContLinks(false);
-        }
-        else hideContLinks(true);
-
-        function hideTag(id, state){
-            if(state) document.getElementById(id).className += " hidden-class";
-            else document.getElementById(id).className.replace(" hidden-class", "");
-        }
-
-        function showReferences(){
-            var cont_links = document.getElementById("content-links");
-            cont_links.innerHTML = "<h3> Referências </h4>"+ links_list;
-            cont_links.className = external_links.length > 0 ? "content-links" : "content-links hidden-class";
-        }
-
-        // Change title and context topic
-        function changeTitleTopic(title, topic){
-            document.getElementById("content-firstheading").innerHTML = title;
-            document.getElementById("content-text").innerHTML = topic;
-        }
-
-        // Change the Selected status
-        function changeSelectedButton(button_n){
-            document.getElementById("button-topic").className = button_n == 1? "selected":"";
-            document.getElementById("button-discuss").className = button_n == 2? "selected":"";;
-            document.getElementById("button-raw").className = button_n == 3? "selected":"";;
-            actual_section = button_n;
-        }
 
         // Hidden contents-link
-        function hideContLinks(state){
-            if(state) document.getElementById("content-links").className = "content-links hidden-class";
-            else document.getElementById("content-links").className = "content-links";
+        function hideContLinks(state) {
+            document.getElementById("content-links").className = state ? "content-links hidden-class" : "content-links";
         }
 
+        // Stack Overflow little trick
+        function escapeRegExp(string) {
+            return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+        }
+        function replaceAll(string, find, replace) {
+            return string.replace(new RegExp(escapeRegExp(find), "g"), replace);
+        }
+
+        // Hide a tag
+        function hideTag(id, state) {
+            var my_tag = document.getElementById(id);
+            if ((my_tag.className.length > 0) && (my_tag.className != "hidden-class")) {
+                if (state) my_tag.className += " hidden-class";
+                else replaceAll(my_tag.className, "hidden-class","");
+            }
+            else
+                my_tag.className = state ? "hidden-class" : "";
+        }
+        // Change title and context topic
+        function changeTitle(title) {
+            hideTag("content-firstheading", (title.startsWith("Web")));
+            document.getElementById("content-firstheading").innerHTML = title;
+        }
+        // Change the Selected status
+        function changeSelectedButton(button_n) {
+            var t1 = true, t2 = true, t3 = true;
+            document.getElementById("button-topic").className = button_n == 1? "selected":"";
+            document.getElementById("button-discuss").className = button_n == 2? "selected":"";
+            document.getElementById("button-raw").className = button_n == 3? "selected":"";
+            switch(button_n){
+                case 1: t1 = false; break;
+                case 2: t2 = false; break;
+                case 3: t3 = false; break;
+            }
+            hideTag("content-text", t1);
+            hideTag("content-comment", t2);
+            hideTag("content-raw", t3);
+            actual_section = button_n;
+        }
         // Button Topic
-        function changeSelectStatusTopic(){
-            changeSelectedButton(1);
-            changeTitleTopic(topic_tag, text_tag);
-            showReferences();
+        function changeSelectStatusTopic() {
+            if (actual_section != 1) {
+                changeSelectedButton(1);
+                changeTitle(topic_tag);
+
+                if (external_links.length > 0) hideContLinks(false);
+            }
         }
         // Button Discuss
-        function changeSelectStatusDiscuss(){
-            changeSelectedButton(2);
-            changeTitleTopic("Discursões", document.getElementById("content-comment").innerHTML);
-            hideContLinks(true);
+        function changeSelectStatusDiscuss() {
+            if (actual_section != 2) {
+                changeSelectedButton(2);
+                changeTitle("Discursões");
+                hideContLinks(true);
+            }
         }
         // Button Raw 
-        function changeSelectStatusViewRaw(){
-            changeSelectedButton(3);
-            changeTitleTopic("Código da página",'<center><img src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/preloading.gif"></img></center>');
-            hideContLinks(true);
-            getRaw(topic_url, changeTitleTopic);
+        function changeSelectStatusViewRaw() {
+            if (actual_section != 3) {
+                changeSelectedButton(3);
+                changeTitle("Código da página");
+                hideContLinks(true);
+                if (!isReceivedRaw) getRaw(topic_url);
+            }
         }
-
         // Get the raw of the selected topic and put on the document
-        function getRaw(url, response){
+        function getRaw(url) {
             var xobj = new XMLHttpRequest();
             url += "?raw=on";
 
-            // url = "teste.html"; // Just for test purposes
-            xobj.open('GET', url, true);
+            xobj.open("GET", url, true);
             xobj.onreadystatechange = function () {
                 if (xobj.readyState == 4 && xobj.status == "200") {
                     var html_received = new DOMParser();
                     html_received = html_received.parseFromString(xobj.responseText, "text/html");
                     
-                    var html_saida = '<div class="raw-text">' + html_received.getElementById("topic").innerHTML + '</div>';
-                    html_saida = html_saida.replace(new RegExp('\r?\n','g'), '<br />', "<br />");
-                    if(actual_section == 3)
-                        response('Código da página', html_saida);
+                    var html_saida = "<div class=\"raw-text\">" + html_received.getElementById("topic").innerHTML + "</div>";
+                    html_saida = html_saida.replace(new RegExp("\r?\n","g"), "<br />", "<br />");
+                    if (actual_section == 3){
+                        changeTitle("Código da página");
+                        document.getElementById("content-raw").innerHTML = html_saida;
+                    }
                 }
             };
             xobj.send(null); 
         }
+        changeTitle(topic_tag);
+        document.getElementById("button-topic").onclick = changeSelectStatusTopic;
+        document.getElementById("button-discuss").onclick = changeSelectStatusDiscuss;
+        document.getElementById("button-raw").onclick = changeSelectStatusViewRaw;
+
+        if (topic_tag.startsWith("Web")) {
+            hideTag("content-firstheading", true);
+        }
+
+        if (external_links.length > 0) {
+            var i;
+            links_list = "<ul>";
+            for (i = 0; i < external_links.length; i++) {
+                links_list += "<li><div class=\"link-external\"><h4 class=\"link-name\"><a href=\"" + external_links[i].href + "\">" + external_links[i].innerHTML + "</a></h4><p class=\"link-description\">" + external_links[i].title + "</p></div></li>";
+            }
+            links_list += "</ul>";
+            document.getElementById("content-links").innerHTML = "<h3> Referências </h3>" + links_list;
+            hideContLinks(false);
+        }
+        else hideContLinks(true);
     </script>
 </body>
 </html>
