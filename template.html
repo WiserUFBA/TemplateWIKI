@@ -37,7 +37,7 @@
     <meta name="twitter:description" content="..." />
 
     <!-- Style Configuration |!!CHANGE HREF BEFORE UPDATE!!| -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/style.css" />
     <!-- https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/style.css -->
     <style type="text/css">
         /* Foswiki classes */
@@ -61,7 +61,7 @@
             <div id="content-central-notice"></div>
         </div>
         <div class="content-indicators"></div>
-        <h1 id="content-firstheading"> %BASETOPIC%a </h1>
+        <h1 id="content-firstheading"> %BASETOPIC% </h1>
         <div id="content-body">
             <div id="content-space"></div>
             <!-- Article will be placed here -->
@@ -234,7 +234,7 @@
         /* Version 1.1 */
         /* First Part */
         var isReceivedRaw = false, actual_section = 1;
-        var topic_url = "", topic_tag = "Veb";
+        var topic_url = "", topic_tag = "";
         if (document.getElementsByClassName("foswikiCurrentTopicLink").length > 0) {
             topic_url = document.getElementsByClassName("foswikiCurrentTopicLink")[0].href;
             topic_tag = topic_url.split("/")[topic_url.split("/").length - 1];
