@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Created by Jeferson Lima -->
+    <!-- Version 1.2 -->
+    <!-- Media Wiki Style template for Foswiki -->
     <!-- Page Configs -->
     <title>Smart-UFBA: Web das Coisas para um campus universitário inteligente</title>
     <meta charset="utf-8" />
@@ -47,6 +50,9 @@
         .content-firstheading a{
             color: black;
         }
+        .indent-txt{
+            white-space: pre-wrap;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +73,7 @@
             <!-- Article will be placed here -->
             <article id="content-text"> %TEXT% </article>
             <div id="content-comment" class="hidden-class"> %COMMENT% </div>
-            <div id="content-raw" class="hidden-class">
+            <div id="content-raw" class="indent-txt hidden-class">
                 <center>
                     <img src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/preloading.gif" />
                 </center>
@@ -138,7 +144,7 @@
             </div>
             <!-- Every group of menu on this secction need to use the class "portal" and the role "navigation" -->
             <!-- <div id="..." class="portal" role="navigation"> -->
-            <div id="main-portal" class="portal" role="navigation">
+            <div id="main-portal" class="portal" name="main" role="navigation">
                 <div class="body">
                     <ul>
                         <li><a href="#" title="Visite a página principal [Alt+Shift+z]">Página Principal</a></li>
@@ -231,8 +237,8 @@
     <script type="text/javascript">
         "use strict";
         /* Created by Jeferson Lima */
-        /* Version 1.1 */
-        /* First Part */
+        /* Version 1.2 */
+        // First Part
         var isReceivedRaw = false, actual_section = 1;
         var topic_url = "", topic_tag = "";
         if (document.getElementsByClassName("foswikiCurrentTopicLink").length > 0) {
@@ -260,7 +266,7 @@
             var my_tag = document.getElementById(id);
             if ((my_tag.className.length > 0) && (my_tag.className != "hidden-class")) {
                 if (state) my_tag.className += " hidden-class";
-                else replaceAll(my_tag.className, "hidden-class","");
+                else my_tag.className = replaceAll(my_tag.className, " hidden-class","");
             }
             else
                 my_tag.className = state ? "hidden-class" : "";
@@ -324,16 +330,26 @@
                     html_received = html_received.parseFromString(xobj.responseText, "text/html");
                     
                     var html_saida = "<div class=\"raw-text\">" + html_received.getElementById("topic").innerHTML + "</div>";
-                    html_saida = html_saida.replace(new RegExp("\r?\n","g"), "<br />", "<br />");
                     if (actual_section == 3){
                         changeTitle("Código da página");
-                        document.getElementById("content-raw").innerHTML = html_saida;
                     }
+                    document.getElementById("content-raw").innerHTML = html_saida;
                 }
             };
             xobj.send(null); 
         }
-        changeTitle(topic_tag);
+        // Correct the error on comments
+        function correctComments() {
+            var text_tag = document.getElementById("content-text");
+            var comment_tag = document.getElementById("content-comment");
+            var comment_pos = text_tag.innerHTML.search("<p></p>\n<p></p>");
+            if (comment_pos != -1){
+                comment_tag.innerHTML += text_tag.innerHTML.slice(comment_pos);
+                text_tag.innerHTML = text_tag.innerHTML.slice(0, comment_pos - 1);
+            }
+        }
+
+        correctComments();
         document.getElementById("button-topic").onclick = changeSelectStatusTopic;
         document.getElementById("button-discuss").onclick = changeSelectStatusDiscuss;
         document.getElementById("button-raw").onclick = changeSelectStatusViewRaw;
@@ -353,6 +369,28 @@
             hideContLinks(false);
         }
         else hideContLinks(true);
+
+        if (topic_tag == "LayoutTemplate") {
+            var iframe_display = document.createElement("iframe");
+            var text_area = document.getElementById("content-text");
+            var text_raw = text_area.innerHTML;
+            text_area.innerHTML = "";
+            text_area.appendChild(iframe_display);
+            iframe_display.width = "100%";
+            iframe_display.height = "400px"; // Need some js trick here
+            if(iframe_display.contentDocument || iframe_display.contentWindow) {
+                if (iframe_display.contentDocument){
+                    iframe_display.contentDocument.open();
+                    iframe_display.contentDocument.write(text_raw);
+                    iframe_display.contentDocument.close();
+                }
+                else
+                    iframe_display.contentWindow.document.innerHTML = text_raw;
+            }
+            else
+                text_area.innerHTML = "ERROR!";
+        }
+        changeTitle(topic_tag);
     </script>
 </body>
 </html>
