@@ -113,7 +113,7 @@
                         </li>
                         <li id="button-discuss">
                             <span>
-                                <a accesskey="d" title="Discursões deste tópico [Alt+Shift+d]" href="#2">Discursões</a>
+                                <a accesskey="d" title="Discussões deste tópico [Alt+Shift+d]" href="#2">Discussões</a>
                             </span>
                         </li>
                     </ul>
@@ -213,9 +213,11 @@
         <ul id="footer-config">
             <li> <a href="%SCRIPTURL{edit}%/%WEB%/%TOPIC%?t=%GMTIME{$epoch}%" accesskey="E"><strong>E</strong>ditar</a> </li>
             <li> <a href="%SCRIPTURL{attach}%/%WEB%/%TOPIC%?t=%GMTIME{$epoch}%" accesskey="A"><strong>A</strong>nexar</a> </li>
+            <li> <a href="/%WEB%/PrintTopic?topico=%TOPIC%" accesskey="I"><strong>I</strong>mprimir</a> </li>
             <li> [[%SCRIPTURL{rdiff}%/%WEB%/%TOPIC%?t=%GMTIME{$epoch}%][Versões]] </li>
             <li> [[WebChanges][Modificações]] </li>
             <li> [[%NOTIFYTOPIC%][Aviso de Atualização]] </li>
+            <li> [[%SCRIPTURL{oops}%/%WEB%/%TOPIC%?t=%GMTIME{$epoch}%&template=more][Mais opções...]] </li>
             <li> [[WebPreferences][Preferências]] </li>
         </ul>
         <ul id="footer-icons">
@@ -309,7 +311,7 @@
         function changeSelectStatusDiscuss() {
             if (actual_section != 2) {
                 changeSelectedButton(2);
-                changeTitle("Discursões");
+                changeTitle("Discussões");
                 hideContLinks(true);
             }
         }
@@ -322,6 +324,7 @@
                 if (!isReceivedRaw) getRaw(topic_url);
             }
         }
+
         // Get the raw of the selected topic and put on the document
         function getRaw(url) {
             var xobj = new XMLHttpRequest();

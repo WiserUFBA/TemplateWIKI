@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Created by Jeferson Lima -->
+    <!-- Edited by Ramon Costa -->
+    <!-- Version 1.0 -->
+    <!-- Media Wiki Style template for Foswiki -->
+    <!-- Template for print a topic -->
+    <!-- Page Configs -->
+    <title>SmartUFBA - Imprimir Topico : </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Copyright informations -->
+    <link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/style.css" />
+</head>
+<body style="background-color:white;">
+    <h5 style="text-align:center;"> Versão para Impressão </h5>
+    <h1 id="titulo"> </h1>
+    <div id="content-body">
+        <div id="content-text">
+            <div style="text-align:center;">
+                <img src="%SCRIPTURL{pub}%/%WEB%/ProjectLogo/preloading.gif" alt="Loading image" />
+            </div>
+        </div>
+        <!-- Button to hide the below div -->
+        <a id = "button-hidecomment" href="#1">Mostrar comentários</a>
+        <div id="content-comment" class="hidden-class"></div>
+        <div id="print-extras">
+            <div id="extras-component" class="hidden-class">
+                %TEXT%
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        "use strict";
+        // Thanks Stack Overflow for this incredible tip 
+        /* jshint -W069 */
+        var urlParams;
+        var commentVisibility = true; 
+        (window.onpopstate = function () {
+            var match,
+                pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                query  = window.location.search.substring(1);
+
+            urlParams = {};
+            while ((match = search.exec(query))){
+               urlParams[decode(match[1])] = decode(match[2]);
+            }
+        }).call();
+
+        function correctComments() {
+            var text_tag = document.getElementById("content-text");
+            var comment_tag = document.getElementById("content-comment");
+            var comment_pos = text_tag.innerHTML.search("<p></p>\n<p></p>");
+            if (comment_pos != -1){
+                var back_tag = comment_tag.innerHTML;
+                comment_tag.innerHTML = text_tag.innerHTML.slice(comment_pos);
+                comment_tag.innerHTML += back_tag;
+                text_tag.innerHTML = text_tag.innerHTML.slice(0, comment_pos - 1);
+            }
+        }
+
+        function getTopico(topico) {
+            var xobj = new XMLHttpRequest();
+
+            xobj.open("GET", window.location.href.substring(0,window.location.href.search("PrintTemplate")) + topico, true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    var html_received = new DOMParser();
+                    html_received = html_received.parseFromString(xobj.responseText, "text/html");
+                    document.getElementById("content-text").innerHTML = html_received.getElementById("content-text").innerHTML;
+                    correctComments();
+                }
+            };
+            xobj.send(null); 
+        }
+
+        //hide comments
+        function hideComment(state){
+            document.getElementById("content-comment").className = state ? "" : "hidden-class";
+            document.getElementById("button-hidecomment").innerHTML = state? "Ocultar comentários" : "Mostrar comentários";
+        }
+        function changeViewStatusComments(){
+            commentVisibility = commentVisibility ? false : true;
+            hideComment(commentVisibility);
+        }
+        document.getElementById("button-hidecomment").onclick = changeViewStatusComments;
+
+        if(urlParams !== "undefined"){
+            getTopico(urlParams["topico"]);
+            document.getElementById("titulo").innerHTML = urlParams["topico"];
+            document.title += " " + urlParams["topico"];
+        }
+        else
+            document.getElementById("content-text").innerHTML = "ERROR";
+    </script>
+</body>
+</html>
+
