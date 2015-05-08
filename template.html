@@ -78,10 +78,12 @@
             <article id="content-text"> %TEXT% </article>
             <div id="content-comment" class="hidden-class"> %COMMENT% </div>
             <div id="content-raw" class="indent-txt hidden-class">
-                <img src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/preloading.gif" alt="Loading image" style="text-align:center;" />
+                <div style="text-align:center;">
+                    <img src="%SCRIPTURL{pub}%/%WEB%/ProjectLogo/preloading.gif" alt="Loading image" />
+                </div>
             </div>
             <div class="printfooter">
-                Retrieved from "<a href="https://wiki.dcc.ufba.br/SmartUFBA" dir="ltr"> https://wiki.dcc.ufba.br/SmartUFBA </a>"
+                Retrieved from "<a href="https://wiki.dcc.ufba.br/%WEB%" dir="ltr"> https://wiki.dcc.ufba.br/%WEB%/ </a>"
             </div>
             <!-- Get the names of this topic -->
             <div id="content-links" class="content-links">
@@ -96,9 +98,9 @@
         <div id="navigation-head">
             <div id="translate-buttons" role="navigation">
                 <ul>
-                    <div class="translate-icon" alt="Translate Menu"></div>
-                    <li><a href="#" class="flag-en"> English </a></li>
-                    <li><a href="#" class="flag-pt"> Portuguese </a></li>
+                    <li class="translate-icon" alt="Translate Menu"></li>
+                    <li><a href="/%WEB%/%TOPIC%En" class="flag-en"> English </a></li>
+                    <li><a href="/%WEB%/%TOPIC%" class="flag-pt"> Portuguese </a></li>
                 </ul>
             </div>
             <div id="head-left">
@@ -129,7 +131,7 @@
                     </ul>
                 </div>
                 <div id="head-search" role="search">
-                    <form id="search-form" name="WebSearchForm" action="/SmartUFBA/WebSearch">
+                    <form id="search-form" name="WebSearchForm" action="/%WEB%/WebSearch">
                         <div id="simple-search">
                             <input id="searchInput" type="text" accesskey="p" title="Procure na wiki [Alt+Shift+p]" placeholder="Search" name="search" tabindex="1" autocomplete="off" />
                             <input class="hidden-class" value="all" name="scope" />
@@ -142,18 +144,18 @@
         </div>
         <div id="navigation-panel">
             <div id="panel-logo" role="banner">
-                <a class="banner" title="Visite a página principal" href="https://wiki.dcc.ufba.br/SmartUFBA/"></a>
+                <a class="banner" title="Visite a página principal" href="/%WEB%/"></a>
             </div>
             <!-- Every group of menu on this secction need to use the class "portal" and the role "navigation" -->
             <!-- <div id="..." class="portal" role="navigation"> -->
             <div id="main-portal" class="portal" name="main" role="navigation">
                 <div class="body">
                     <ul>
-                        <li><a href="#" title="Visite a página principal [Alt+Shift+z]">Página Principal</a></li>
-                        <li><a href="#"> Sobre o projeto </a></li>
-                        <li><a href="#"> Publicações </a></li>
-                        <li><a href="#"> Apresentações </a></li>
-                        <li><a href="#"> Grupo </a></li>
+                        <li><a href="/%WEB%/" title="Visite a página principal [Alt+Shift+z]">Página Principal</a></li>
+                        <li><a href="/%WEB%/SobreProjeto"> Sobre o projeto </a></li>
+                        <li><a href="/%WEB%/PublicacoesArtigos"> Publicações </a></li>
+                        <li><a href="/%WEB%/NoticiasProjeto"> Notícias </a></li>
+                        <li><a href="/%WEB%/NossoGrupo"> Grupo </a></li>
                     </ul>
                 </div>       
             </div>
@@ -164,12 +166,12 @@
                 <h3> Hardware </h3>
                 <div class="body">
                     <ul>
-                        <li><a href="#"> Tutoriais </a></li>
-                        <li><a href="#"> Artigos </a></li>
-                        <li><a href="#"> Projetos </a></li>
-                        <li><a href="#"> Especificações </a></li>
-                        <li><a href="#"> Todos os Tópicos </a></li>
-                        <li><a href="#"> Diário de Bordo </a></li>
+                        <li><a href="/%WEB%/GrupoHardware.Tutoriais"> Tutoriais </a></li>
+                        <li><a href="/%WEB%/GrupoHardware.Artigos"> Artigos </a></li>
+                        <li><a href="/%WEB%/GrupoHardware.Projetos"> Projetos </a></li>
+                        <li><a href="/%WEB%/GrupoHardware.Especificaoes"> Especificações </a></li>
+                        <li><a href="/%WEB%/GrupoHardware.Todos"> Todos os Tópicos </a></li>
+                        <li><a href="/%WEB%/GrupoHardware.Blog"> Diário de Bordo </a></li>
                     </ul>
                 </div>       
             </div>
@@ -177,12 +179,12 @@
                 <h3> Software </h3>
                 <div class="body">
                     <ul>
-                        <li><a href="#"> Tutoriais </a></li>
-                        <li><a href="#"> Artigos </a></li>
-                        <li><a href="#"> Projetos </a></li>
-                        <li><a href="#"> Especificações </a></li>
-                        <li><a href="#"> Todos os Tópicos </a></li>
-                        <li><a href="#"> Diário de Bordo </a></li>
+                        <li><a href="/%WEB%/GrupoSoftware.Tutoriais"> Tutoriais </a></li>
+                        <li><a href="/%WEB%/GrupoSoftware.Artigos"> Artigos </a></li>
+                        <li><a href="/%WEB%/GrupoSoftware.Projetos"> Projetos </a></li>
+                        <li><a href="/%WEB%/GrupoSoftware.Especificaoes"> Especificações </a></li>
+                        <li><a href="/%WEB%/GrupoSoftware.Todos"> Todos os Tópicos </a></li>
+                        <li><a href="/%WEB%/GrupoSoftware.Blog"> Diário de Bordo </a></li>
                     </ul>
                 </div>       
             </div>
@@ -190,12 +192,12 @@
                 <h3> Barramento </h3>
                 <div class="body">
                     <ul>
-                        <li><a href="#"> Tutoriais </a></li>
-                        <li><a href="#"> Artigos </a></li>
-                        <li><a href="#"> Projetos </a></li>
-                        <li><a href="#"> Especificações </a></li>
-                        <li><a href="#"> Todos os Tópicos </a></li>
-                        <li><a href="#"> Diário de Bordo </a></li>
+                        <li><a href="/%WEB%/GrupoBarramento.Tutoriais"> Tutoriais </a></li>
+                        <li><a href="/%WEB%/GrupoBarramento.Artigos"> Artigos </a></li>
+                        <li><a href="/%WEB%/GrupoBarramento.Projetos"> Projetos </a></li>
+                        <li><a href="/%WEB%/GrupoBarramento.Especificaoes"> Especificações </a></li>
+                        <li><a href="/%WEB%/GrupoBarramento.Todos"> Todos os Tópicos </a></li>
+                        <li><a href="/%WEB%/GrupoBarramento.Blog"> Diário de Bordo </a></li>
                     </ul>
                 </div>       
             </div>
@@ -217,19 +219,19 @@
             <li> [[WebPreferences][Preferências]] </li>
         </ul>
         <ul id="footer-icons">
-            <li id="wiser-ufba">
-                <a href="http://wiser.dcc.ufba.br">
-                    <img height="50" alt="Wiser Research Group" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/wiserufbalogo.jpg" />
-                </a>
-            </li>
             <li id="smart-ufba">
                 <a href="https://github.com/WiserUFBA/SmartUFBA">
-                    <img height="55" alt="SmartUFBA Project" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/favicon-96x96.png" />
+                    <img alt="SmartUFBA Project" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/smartufba-button.png" />
                 </a>
             </li>
             <li id="smart-wiki-template">
                 <a href="https://github.com/WiserUFBA/TemplateWIKI/">
-                    <img height="52" alt="SmartUFBA Project Wiki Template" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/gr200.png" />
+                    <img alt="Foswiki template based on Media Wiki style" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/template-button.png" />
+                </a>
+            </li>
+            <li id="wiser-ufba">
+                <a href="http://wiser.dcc.ufba.br">
+                    <img alt="Wiser Research Group" src="https://wiki.dcc.ufba.br/pub/SmartUFBA/ProjectLogo/wiser-button.png" />
                 </a>
             </li>
         </ul>
